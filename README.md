@@ -82,6 +82,17 @@ Notes
 compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+   }
+```
+
+4. To keep only some CPU architectures, for example armeabi-v7a and arm64-v8a, add the following inside android block
+```gradle
+android {
+    ...
+    ndk {
+        // Tells Gradle to package the following ABIs into your application
+        abiFilters 'armeabi-v7a', 'arm64-v8a'
     }
-    ```
+}
+```
 
