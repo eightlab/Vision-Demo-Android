@@ -59,10 +59,10 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
   ScanResult
   ----------
   Available `ScanResult`
-  1. For Passport, use `PassportScanResult`
-  2. For MyKad, use `MyKadScanResult`
-  3. For iKad, use `IKadScanResult`
-  4. For iKad, use `IKadScanResult
+  * For Passport, use `PassportScanResult`
+  * For MyKad, use `MyKadScanResult`
+  * For iKad, use `IKadScanResult`
+  * For iKad, use `IKadScanResult
   
 Notes
 =======
