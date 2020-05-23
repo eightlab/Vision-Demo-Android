@@ -63,3 +63,25 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
   2. For MyKad, use `MyKadScanResult`
   3. For iKad, use `IKadScanResult`
   4. For iKad, use `IKadScanResult
+  
+Notes
+=======
+
+1. Migrate to AndroidX, if current application is in support library. 
+   Use the link below to migrate.
+     	https://developer.android.com/jetpack/androidx/migrate
+
+2. Add the code below in project's gradle.properties to enable 
+```gradle
+        android.useAndroidX=true
+        android.enableJetifier=true
+```
+
+3. Add below inside android block if Java 8 incompatible error
+```gradle
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    ```
+
