@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WidthMatchHeightMatchVertical"
+    android:background="@android:color/white">
+
+    <include layout="@layout/toolbar_main" />
+
+    <LinearLayout
+        style="@style/WidthMatchHeightWrapVertical"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginRight="@dimen/activity_margin">
+
+        <TextView
+            style="@style/WidthWrapHeightWrap"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/select_document"
+            android:textColor="#00BFA6"
+            android:textSize="22sp" />
+
+        <TextView
+            style="@style/WidthWrapHeightWrap"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/you_will_take_a_picture_of_it_in_the_next_step"
+            android:textColor="#A8A8A9"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:background="@color/lightGreyColor" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idOptionsRecyclerView"
+        style="@style/WidthMatchHeightWrap" />
+</LinearLayout>

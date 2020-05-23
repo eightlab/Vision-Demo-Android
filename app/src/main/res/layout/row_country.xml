@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WidthMatchHeightWrapVertical">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/WidthMatchHeightWrap"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingTop="@dimen/dimen_10"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingBottom="@dimen/dimen_10"
+        android:textColor="#2F2E41"
+        android:textSize="16sp"
+        tools:text="Nepal" />
+</LinearLayout>

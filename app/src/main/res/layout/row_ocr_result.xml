@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WidthMatchHeightWrapVertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:background="@color/lightGreyColor" />
+
+    <LinearLayout
+        android:id="@+id/fullNameLayout"
+        style="@style/WidthMatchHeightWrapHorizontal"
+        android:layout_marginBottom="@dimen/dimen_10">
+
+        <!--label text view-->
+        <TextView
+            android:id="@+id/labelTextView"
+            style="@style/TextViewLabelStyle"
+            android:layout_gravity="center_vertical"
+            android:text="@string/full_name"
+            android:textAllCaps="true" />
+
+        <!--colon-->
+        <TextView
+            style="@style/TextViewLabelStyle"
+            android:layout_gravity="center_vertical"
+            android:text=" : " />
+
+        <!--result value-->
+        <TextView
+            android:id="@+id/valueTextView"
+            style="@style/TextViewStyle"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="3dp"
+            android:text="@string/n_a"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</LinearLayout>

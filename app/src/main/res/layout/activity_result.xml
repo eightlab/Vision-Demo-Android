@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WidthMatchHeightMatchVertical">
+
+    <include layout="@layout/toolbar_main" />
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/WidthMatchHeightMatch"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            style="@style/WidthMatchHeightWrapVertical">
+            <!--top image layout-->
+            <LinearLayout
+                android:id="@+id/topImageLayout"
+                style="@style/WidthMatchHeightWrap"
+                android:layout_marginTop="@dimen/activity_margin">
+
+                <ImageView
+                    android:id="@+id/cardImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="5dp"
+                    tools:src="@drawable/ic_launcher_background" />
+
+            </LinearLayout>
+
+            <!--recycler view-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultRecyclerView"
+                style="@style/WidthMatchHeightWrap"
+                android:layout_margin="@dimen/activity_margin" />
+
+            <!--button layout-->
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                style="@style/WidthMatchHeightWrapHorizontal"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/ocrResultNextButton"
+                    style="@style/DefaultButtonSyle"
+                    android:layout_height="58dp"
+                    android:layout_margin="@dimen/dimen_10"
+                    android:layout_weight="1"
+                    android:text="@string/go_to_home"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

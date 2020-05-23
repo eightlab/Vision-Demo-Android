@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <ImageView
+        android:id="@+id/backImageView"
+        style="@style/WidthWrapHeightWrap"
+        android:paddingTop="@dimen/activity_margin"
+        android:paddingEnd="@dimen/activity_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        android:src="@drawable/ic_arrow_back_outline" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/WidthMatchHeightMatch"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start|center"
+        android:textColor="@color/darkGreyColor"
+        android:textSize="20sp"
+        tools:text="@string/identity_verification_text" />
+</androidx.appcompat.widget.Toolbar>

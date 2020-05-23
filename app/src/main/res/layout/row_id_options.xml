@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WidthMatchHeightWrapVertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="@dimen/activity_margin"
+    android:paddingEnd="@dimen/activity_margin">
+
+    <RelativeLayout
+        style="@style/WidthMatchHeightWrap"
+        android:paddingTop="@dimen/dimen_10"
+        android:paddingBottom="@dimen/dimen_10">
+
+        <!--icon image view-->
+        <ImageView
+            android:id="@+id/idImageView"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            tools:src="@drawable/ic_card" />
+
+        <!--card name text-->
+        <TextView
+            android:id="@+id/nameTextView"
+            style="@style/WidthMatchHeightWrap"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/rightArrowImageView"
+            android:layout_toEndOf="@id/idImageView"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center|start"
+            android:textColor="#2F2E41"
+            android:textSize="14sp"
+            tools:text="Passport" />
+
+        <!--right arrow image view-->
+        <ImageView
+            android:id="@+id/rightArrowImageView"
+            style="@style/WidthWrapHeightWrap"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/dimen_10"
+            app:srcCompat="@drawable/ic_ev_ic_right" />
+    </RelativeLayout>
+
+    <!--straight line-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightGreyColor" />
+</LinearLayout>

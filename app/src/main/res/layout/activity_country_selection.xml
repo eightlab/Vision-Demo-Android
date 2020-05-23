@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WidthMatchHeightMatchVertical"
+    android:background="@android:color/white">
+
+    <include layout="@layout/toolbar_main" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/countryRecyclerView"
+        style="@style/WidthMatchHeightWrap" />
+</LinearLayout>
