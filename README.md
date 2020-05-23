@@ -53,7 +53,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
           2. CardType.MYKAD
           3. CardType.IKAD
           4. CardType.MYTENTERA
-  * `dateFormat` - Pass custom dateformat. For example: MM/dd/yyyy
+  * `dateFormat` - Pass custom [dateformat](https://developer.android.com/reference/java/text/SimpleDateFormat). For example: MM/dd/yyyy
   * `scanTime` - scan timeout in seconds
   
   ScanResult
@@ -62,7 +62,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
   * For Passport, use `PassportScanResult`
   * For MyKad, use `MyKadScanResult`
   * For iKad, use `IKadScanResult`
-  * For iKad, use `IKadScanResult
+  * For MyTentera, use `MyTenteraScanResult`
   
 Notes
 =======
