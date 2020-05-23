@@ -13,7 +13,6 @@ import co.eightlab.sample.base.AppBaseActivity
 import co.eightlab.sample.model.Card
 import co.eightlab.sample.model.CountryData
 import co.eightlab.sample.utils.extensions.toast
-import co.eightlab.sample.utils.extensions.v
 import co.eightlab.sample.view.id_options.adapter.IdOptionListAdapter
 import co.eightlab.sample.view.result.ResultActivity
 import kotlinx.android.synthetic.main.activity_id_options.*
@@ -47,12 +46,11 @@ class IdOptionsActivity : AppBaseActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == EightVisionSdk.REQUEST_EIGHT_VISION_ID_OCR) {
-            if (resultCode == Activity.RESULT_OK && data != null) {
-                if (data.hasExtra(Constants.EXTRA_SCAN_RESULT)) {
-                    val result: ScanResult = data.getParcelableExtra(Constants.EXTRA_SCAN_RESULT)
-                    openResultActivity(result)
-                } else v(TAG, getString(R.string.please_contact_our_customer_support))
+        if (resultCode == Activity.RESULT_OK && requestCode == EightVisionSdk.REQUEST_EIGHT_VISION_ID_OCR) {
+            if (data != null && data.hasExtra(Constants.EXTRA_SCAN_RESULT)) {
+                //Received OCR result
+                val result: ScanResult = data.getParcelableExtra(Constants.EXTRA_SCAN_RESULT)
+                openResultActivity(result)
             } else { //Result failed
                 toast(getString(R.string.scan_failed_try_again))
             }
@@ -75,11 +73,11 @@ class IdOptionsActivity : AppBaseActivity() {
      */
     private fun idOptionsClicked(card: Card) {
         when (card.id) {
-            1 -> startLiveScan(CardType.PASSPORT, SCAN_TIME)
-            2 -> startLiveScan(CardType.MYKAD, SCAN_TIME)
-            3 -> startLiveScan(CardType.IKAD, SCAN_TIME)
-            4 -> startLiveScan(CardType.UNHCR, SCAN_TIME)
-            5 -> startLiveScan(CardType.MYTENTERA, SCAN_TIME)
+            1 -> startLiveScan(CardType.PASSPORT)
+            2 -> startLiveScan(CardType.MYKAD)
+            3 -> startLiveScan(CardType.IKAD)
+            4 -> startLiveScan(CardType.UNHCR)
+            5 -> startLiveScan(CardType.MYTENTERA)
             else -> {
                 toast(getString(R.string.please_contact_our_customer_support))
             }
@@ -89,13 +87,13 @@ class IdOptionsActivity : AppBaseActivity() {
     /**
      * start the sdk
      */
-    private fun startLiveScan(cardType: CardType, scanTime: Int) {
+    private fun startLiveScan(cardType: CardType) {
         val validLicense = ""   //please add valid license key here
         EightVisionSdk.Builder()
                 .apiKey(validLicense)
                 .cardType(cardType)
                 .dateFormat("MM/dd/yyyy")
-                .scanTime(scanTime)
+                .scanTime(SCAN_TIME)
                 .build()
                 .start(this)
     }
