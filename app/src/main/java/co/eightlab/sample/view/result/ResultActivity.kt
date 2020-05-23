@@ -117,6 +117,7 @@ class ResultActivity : AppCompatActivity() {
             val firstName: String = passportScanResult.firstNames
             val fullName = "$firstName $lastName"
             cardImageUri = passportScanResult.imageUri
+
             results.add(ResultData(getString(R.string.full_name), fullName))
             results.add(ResultData(getString(R.string.passport_number), passportNumber))
             results.add(ResultData(getString(R.string.nationality), nationality))
@@ -146,53 +147,6 @@ class ResultActivity : AppCompatActivity() {
             results.add(ResultData(getString(R.string.employer), employer))
             results.add(ResultData(getString(R.string.expiry_date), expiryDate))
             results.add(ResultData(getString(R.string.address), ownerAddress))
-        } else if (result is UNHCRScanResult) { //UNHCR Result
-            val unhcrScanResult: UNHCRScanResult = result as UNHCRScanResult
-            val nationality: String = unhcrScanResult.country
-            val number: String = unhcrScanResult.unhcrNumber
-            val name: String = unhcrScanResult.name
-            val dob: String = unhcrScanResult.dateOfBirth
-            val expiryDate: String = unhcrScanResult.expiry
-            val issueDate: String = unhcrScanResult.issue
-            val gender: String = unhcrScanResult.gender
-            val personal_number: String = unhcrScanResult.pno
-            cardImageUri = unhcrScanResult.imageUri
-            results.add(ResultData(getString(R.string.full_name), name))
-            results.add(ResultData(getString(R.string.number), number))
-            results.add(ResultData(getString(R.string.nationality), nationality))
-            results.add(ResultData(getString(R.string.date_of_birth), dob))
-            results.add(ResultData(getString(R.string.gender), gender))
-            results.add(ResultData(getString(R.string.expiry_date), expiryDate))
-            results.add(ResultData(getString(R.string.issued_date), issueDate))
-            results.add(ResultData(getString(R.string.personal_number), personal_number))
-        } else if (result is KTPScanResult) { //KTP Result
-            val ktpScanResult: KTPScanResult = result as KTPScanResult
-            val nik: String = ktpScanResult.nik
-            val name: String = ktpScanResult.name
-            val pob: String = ktpScanResult.birthPlace
-            val gender: String = ktpScanResult.gender
-            val address: String = ktpScanResult.address
-            val rt_rw: String = ktpScanResult.rT_RW
-            val village: String = ktpScanResult.village
-            val district: String = ktpScanResult.subDistrict
-            val religion: String = ktpScanResult.religion
-            val profession: String = ktpScanResult.profession
-            val marital_status: String = ktpScanResult.maritalStatus
-            val nationality: String = ktpScanResult.citizenship
-            val valid_date: String = ktpScanResult.validDate
-            val pdi: String = ktpScanResult.pdi
-            cardImageUri = ktpScanResult.imageUri
-            results.add(ResultData(getString(R.string.full_name), name))
-            results.add(ResultData(getString(R.string.nik), nik))
-            results.add(ResultData(getString(R.string.birth_place), pob))
-            results.add(ResultData(getString(R.string.gender), gender))
-            results.add(ResultData(getString(R.string.address), address))
-            results.add(ResultData(getString(R.string.nationality), nationality))
-            results.add(ResultData(getString(R.string.profession), profession))
-            results.add(ResultData(getString(R.string.valid_date), valid_date))
-            results.add(ResultData(getString(R.string.religion), religion))
-            results.add(ResultData(getString(R.string.marital_status), marital_status))
-            results.add(ResultData(getString(R.string.place_date_of_issue), pdi))
         }
         if (cardImageUri != null) cardImageView!!.setImageURI(cardImageUri)
         return results

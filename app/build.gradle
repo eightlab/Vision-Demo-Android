@@ -21,8 +21,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,7 +44,7 @@ dependencies {
     implementation Dependencies.gson
 
     //Eight vision
-    implementation 'co.eightlab:eightvision:1.0.0'
+    implementation Dependencies.eightVision
 }
 repositories {
     mavenCentral()
