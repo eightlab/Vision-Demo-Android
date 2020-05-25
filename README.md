@@ -48,11 +48,11 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
   Parameters
   ----------
   * `apiKey` - Get valid licnese key from support team
-  * `cardType` - 
-          1. CardType.PASSPORT
-          2. CardType.MYKAD
-          3. CardType.IKAD
-          4. CardType.MYTENTERA
+  * `cardType`
+    1. `CardType.PASSPORT`
+    2. `CardType.MYKAD`
+    3. `CardType.IKAD`
+    4. `CardType.MYTENTERA`
   * `dateFormat` - Pass custom [dateformat](https://developer.android.com/reference/java/text/SimpleDateFormat). For example: MM/dd/yyyy
   * `scanTime` - scan timeout in seconds
   
