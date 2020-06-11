@@ -15,7 +15,7 @@ Integration Steps
 2. Add the dependency
 ```gradle
    dependencies {
-         implementation 'co.eightlab:eightvision:1.0.1'
+         implementation 'co.eightlab:eightvision:1.0.6.6'
    }
 ```
 
