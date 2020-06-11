@@ -2,7 +2,7 @@ object Versions {
     const val kotlinVersion = "1.3.41"
     const val appCompat = "1.1.0"
     const val gson = "2.8.6"
-    const val eightVision = "1.0.1"
+    const val eightVision = "1.0.6.6"
 }
 
 object Dependencies {
